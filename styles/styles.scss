@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  font-family: "Raleway", sans-serif;
+  overflow: hidden;
+}
+
+main {
+  padding: 5%;
+  background-color: antiquewhite;
+  height: 100vh;
+}
+
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: min-content;
+  grid-gap: 1rem;
+  padding: 3%;
+  overflow-y: auto;
+
+  @media screen and (max-width: 770px) {
+    justify-items: center;
+  }
+
+  .member {
+    position: relative;
+    background-color: #fff;
+    height: 300px;
+    width: 300px;
+    // display: grid;
+    // grid-template-rows: 1fr 0.9fr;
+    box-shadow: #61616121 3px 3px 5px;
+    transition: transform 0.2s ease;
+    height: auto;
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .member-info {
+      padding: 1rem 1rem 0 1rem;
+
+      p {
+        margin: 1rem 0;
+      }
+    }
+
+    .delete-icon {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+    }
+  }
+}
+
+.search {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+
+  .search-input {
+    width: 80%;
+    height: 100%;
+    font-family: inherit;
+    font-size: 1.5rem;
+    padding: 20px;
+    border: 0;
+    background-size: 3%;
+    padding-left: 60px;
+    outline: none;
+  }
+
+  button {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 0px 20px;
+    margin: 1rem 1rem 1rem 0;
+    border: none;
+    background-color: rgb(38, 165, 123);
+    color: #fff;
+    border-radius: 15px;
+    font-family: inherit;
+    font-size: 1.3rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
